@@ -160,7 +160,78 @@ FROM
 GROUP BY
   member_casual
 ```
-
+4. Calculating how many trips (and their percentage) were made by the two groups, each day, on an average week:
+```sql
+WITH
+  rides_in_specific_day_and_memebertype AS (
+  SELECT
+    member_casual,
+    COUNT (*) AS total_rides_per_day_and_type,
+    day_of_week
+  FROM
+    `bike-share-case-study-410714.TripData.trip_data`
+  GROUP BY
+    member_casual,
+    day_of_week),
+  rides_per_specific_day AS (
+  SELECT
+    COUNT(*) AS total_rides_per_day,
+    day_of_week
+  FROM
+    `bike-share-case-study-410714.TripData.trip_data`
+  GROUP BY
+    day_of_week)
+SELECT
+  rides_in_specific_day_and_memebertype.member_casual,
+  rides_in_specific_day_and_memebertype.day_of_week,
+  rides_in_specific_day_and_memebertype.total_rides_per_day_and_type,
+  rides_per_specific_day.total_rides_per_day,
+  (rides_in_specific_day_and_memebertype.total_rides_per_day_and_type / rides_per_specific_day.total_rides_per_day)*100 AS ride_percentage
+FROM
+  rides_in_specific_day_and_memebertype
+LEFT JOIN
+  rides_per_specific_day
+ON
+  rides_in_specific_day_and_memebertype.day_of_week = rides_per_specific_day.day_of_week
+ORDER BY
+  rides_in_specific_day_and_memebertype.day_of_week
+```
+5. Finding the top 50 start stations for each of the two groups:
+``` sql
+WITH
+  start_count_top50 AS (
+  SELECT
+    start_station_name,
+    COUNT(*) AS start_count
+  FROM
+    `bike-share-case-study-410714.TripData.trip_data`
+  WHERE
+    member_casual = "member" #we run the code a second time with member_casual="casual"
+  GROUP BY
+    start_station_name
+  ORDER BY
+    start_count DESC
+  LIMIT
+    50),
+  start_lat_lng AS (
+  SELECT
+    DISTINCT start_station_name,
+    start_lat,
+    start_lng
+  FROM
+    `bike-share-case-study-410714.TripData.trip_data`)
+SELECT
+  start_count_top50.start_station_name,
+  start_count_top50.start_count,
+  start_lat_lng.start_lat,
+  start_lat_lng.start_lng
+FROM
+  start_count_top10
+JOIN
+  start_lat_lng
+ON
+  start_count_top10.start_station_name = start_lat_lng.start_station_name
+```
 
 
 
