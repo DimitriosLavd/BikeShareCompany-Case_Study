@@ -2,9 +2,9 @@
 An -one week- data analysis case study for a bike share company. Includes Python and SQL codes. 
 
 ## Table of Contents
--[Project Overview-case study scenario](project-overview-case-study-scenario)
+-[Project Overview and Case Study Scenario](project-overview-case-study-scenario)
 
-### Project Overview-case study scenario
+### Project Overview and Case Study Scenario
 You are a junior data analyst working on the marketing analyst team at Cyclistic, a
 bike-share company in Chicago. The director of marketing believes the company’s
 future success depends on maximizing the number of annual memberships. Therefore, your team wants to understand how casual riders and annual members
