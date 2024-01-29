@@ -39,6 +39,48 @@ In the initial data preparation phase, we performed the following tasks:
 2. Correcting the format of the date-time columns using Google Sheets.
 3. Managing missing values using Google Sheets.
 4. Formatting the latitude and longitude columns using Goodgle Sheets and a Python script.
+``` python
+"""
+Created on Mon Jan  8 23:30:33 2024
+
+@author: jim47
+"""
+import pandas as pd
+import numpy as np
+
+
+""" Import the semi-cleaned dataset """
+tripdata = pd.read_csv(r"D:\data analysis_2\CASE_STUDY\tripdata_cleaning_phase1.csv")
+
+""" fix the wrong lat-long values"""
+for i in range(84776):
+    if tripdata.start_lat[i]>100 :
+        tripdata.start_lat[i] = tripdata.start_lat[i]*0.1
+    else:
+        tripdata.start_lat[i] = tripdata.start_lat[i]*1 
+
+for i in range(84776):
+    if tripdata.end_lat[i]>100 :
+        tripdata.end_lat[i] = tripdata.end_lat[i]*0.1
+    else:
+        tripdata.end_lat[i] = tripdata.end_lat[i]*1
+        
+for i in range(84776):
+   if tripdata.start_lng[i]<-100 :
+      tripdata.start_lng[i] = tripdata.start_lng[i]*0.1
+   else:
+      tripdata.start_lng[i] = tripdata.start_lng[i]*1
+
+for i in range(84776):
+    if tripdata.end_lng[i]<-100 :
+        tripdata.end_lng[i] = tripdata.end_lng[i]*0.1
+    else:
+        tripdata.end_lng[i] = tripdata.end_lng[i]*1
+        
+cleaned_tripdata = tripdata
+
+cleaned_tripdata.to_csv(r"D:\data analysis_2\CASE_STUDY\tripdata_cleaning_phase2.csv")
+```
 5. Adding two useful columns for our analysis -> ride_length and day_of_week
 6. Deleting rows that contained wrong information in the ride_length column.
    
@@ -49,6 +91,75 @@ After the data cleaning and preparation phase we produced the "tripdata_CLEANED.
 3. How the trip percentage composition change throuought an average week?
 4. In which areas of Chicago City do the two user groups' members tend to start their bike trips?
 
+### Data Analysis
+In this section we present some interesting sql queries we wrote in order to analyze our data set:
+1. Creating a new column that calculates the ride length in DAYS/HOURS/MINUTES/SECONDS format:
+``` sql
+WITH
+  difference_in_seconds AS (
+  SELECT
+    ride_id,
+    started_at,
+    ended_at,
+    member_casual,
+    ride_length,
+    TIMESTAMP_DIFF(ended_at, started_at,SECOND) AS seconds
+  FROM
+    `bike-share-case-study-410714.TripData.trip_data` ),
+  differences AS (
+  SELECT
+    ride_id,
+    started_at,
+    ended_at,
+    ride_length,
+    member_casual,
+    seconds,
+    MOD(seconds, 60) AS seconds_part,
+    MOD(seconds, 3600) AS minutes_part,
+    MOD(seconds, 3600 * 24) AS hours_part
+  FROM
+    difference_in_seconds )
+SELECT
+  ride_id,
+  started_at,
+  ended_at,
+  ride_length,
+  member_casual,
+  CONCAT( FLOOR(seconds / 3600 / 24), ' days ', FLOOR(hours_part / 3600), ' hours ', FLOOR(minutes_part / 60), ' minutes ', seconds_part, ' seconds' ) AS difference
+FROM
+  differences
+```
+2. Calculating how many trips were made by each of the two user groups:
+``` sql
+SELECT
+  member_casual,
+  COUNT (*) AS total_rides
+FROM
+  `bike-share-case-study-410714.TripData.trip_data`
+GROUP BY
+  member_casual
+```
+3. Calculating the average trip duration for each of the two groups:
+```sql
+WITH
+  trip_duration_in_minutes AS (
+  SELECT
+    ride_id,
+    started_at,
+    ended_at,
+    member_casual,
+    ride_length,
+    TIMESTAMP_DIFF(ended_at, started_at,MINUTE) AS minutes
+  FROM
+    `bike-share-case-study-410714.TripData.trip_data`)
+SELECT
+  member_casual,
+  AVG(minutes) AS average_trip_duration,
+FROM
+  trip_duration_in_minutes
+GROUP BY
+  member_casual
+```
 
 
 
