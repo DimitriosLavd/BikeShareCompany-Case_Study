@@ -52,7 +52,7 @@ Trip Data: Our primary data scource is the "202004-divvy-tripdata.CSV", that con
 - Python: Data cleaning and manipulation
 - BigQuery (SQL): Data analysis
 - Tableau: Data visualization
-- 
+
 ### Data Cleaning and Preparation
 In the initial data preparation phase, we performed the following tasks:
 1. Loading and inspecting the data set.
