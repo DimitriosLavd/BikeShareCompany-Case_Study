@@ -3,6 +3,14 @@ An -one week- data analysis case study for a bike share company. Includes Python
 
 ## Table of Contents
 -[Project Overview and Case Study Scenario](#project-overview-and-case-study-scenario)
+-[Data Source](#data-source)
+-[Tools](#tools)
+-[Data Cleaning and Preparation](#data-cleaning-and-preparation)
+-[Exploratory Data Analysis](#exploratory-data-analysis)
+-[Data Analysis](#data-analysis)
+-[Results and Findings](#results-and-findings)
+-[Recomendations](#recomendations)
+-[Refrences](#refrences)
 
 ### Project Overview and Case Study Scenario
 You are a junior data analyst working on the marketing analyst team at Cyclistic, a
@@ -26,7 +34,7 @@ annual members and casual users use the company’s services differently.Analyzi
 these differences correctly will be the key for answering the other two questions
 and achieving the company’s objective.
 
-### Data scource 
+### Data Source 
 Trip Data: Our primary data scource is the "202004-divvy-tripdata.CSV", that contains detailed information about the trips made using the company's bikes, for 12 months.
 
 ### Tools 
@@ -36,7 +44,7 @@ Trip Data: Our primary data scource is the "202004-divvy-tripdata.CSV", that con
 - BigQuery (SQL): Data analysis
 - Tableau: Data visualization
 - 
-### Data Cleaning/Preparation
+### Data Cleaning and Preparation
 In the initial data preparation phase, we performed the following tasks:
 1. Loading and inspecting the data set.
 2. Correcting the format of the date-time columns using Google Sheets.
@@ -236,7 +244,7 @@ ON
   start_count_top10.start_station_name = start_lat_lng.start_station_name
 ```
 
-### Results/Findings
+### Results and Findings
 
 1. The annual members have made over 2.5 times more trips than the
 casual users. These numbers may indicate that annual members use the company’s
