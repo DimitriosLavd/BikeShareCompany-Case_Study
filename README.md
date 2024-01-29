@@ -2,23 +2,23 @@
 An -one week- data analysis case study for a bike share company. Includes Python and SQL codes. 
 
 ## Table of Contents
--[Project Overview and Case Study Scenario](#project-overview-and-case-study-scenario)
+- [Project Overview and Case Study Scenario](#project-overview-and-case-study-scenario)
 
--[Data Source](#data-source)
+- [Data Source](#data-source)
 
--[Tools](#tools)
+- [Tools](#tools)
 
--[Data Cleaning and Preparation](#data-cleaning-and-preparation)
+- [Data Cleaning and Preparation](#data-cleaning-and-preparation)
 
--[Exploratory Data Analysis](#exploratory-data-analysis)
+- [Exploratory Data Analysis](#exploratory-data-analysis)
 
--[Data Analysis](#data-analysis)
+- [Data Analysis](#data-analysis)
 
--[Results and Findings](#results-and-findings)
+- [Results and Findings](#results-and-findings)
 
--[Recomendations](#recomendations)
+- [Recomendations](#recomendations)
 
--[Refrences](#refrences)
+- [Refrences](#refrences)
 
 
 ### Project Overview and Case Study Scenario
