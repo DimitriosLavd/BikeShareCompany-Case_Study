@@ -233,6 +233,62 @@ ON
   start_count_top10.start_station_name = start_lat_lng.start_station_name
 ```
 
+### Results/Findings
+
+1. The annual members have made over 2.5 times more trips than the
+casual users. These numbers may indicate that annual members use the company’s
+bikes,primarily for their everyday transports.
+
+2. The average trip of the casual user lasts 5 times longer than the one of
+the annual member. This is a strong indication that casual members use the bike
+share service for long rides, for leisure and entertainment purposes.
+
+3. On weekends and especially on Sunday, the casual users’ trips represent
+a much larger percentage of the total trips in contrast with what happens midweek. The above information can be summarized in the following graph, that enable us to
+extract some useful trends that govern the habits of the two user groups.
+
+Summarized insight (summury of the 3 previous insights): The annual members make many trips that
+last a relatively small amount of time. These data indicate that annual members
+use the company's bikes,mainly, for everyday transports such as commuting to
+work or going for their groceries. This is also backed by the fact that we do not see
+considerable differences in the average trip duration during the week. On the
+other hand, casual users made a lot less trips, but for the better part of an average
+week, their trips last a lot longer. A longer bike trip has more probabilities to be a
+leisure activity than a way to complete an everyday task. This observation is also
+supported by the fact, that we see large differences in trip duration throughout the
+week.
+
+4. We can see that the two user groups select a similar general location to
+start their bike trips. A close look at the heat maps reveals, that the points of
+interest for the casual users are not that much concentrated. On the contrary, they
+are spread over a wider area in the City of Chicago. This observation may show a
+tendency for city exploration. Yet another fact that supports the theory that the
+casual users use the bikes for entertainment purposes.
+
+### Recomendations
+The main business goal is to convert casual users to annual members. A potential
+effective way to achieve this goal is to offer annual membership perks and bonuses
+that are tailor made for the habits of the average casual user. Some of our top
+recommendations are the following.
+
+1. Bonus and perks that rewards longer trips: As we saw, casual users tend to make
+longer bike trips. The company can offer bonuses when the user makes trips that
+exceed a specified period of time. For example, if a member makes many long trips, gets a discount in the next year membership.
+
+2. Rewarding city exploration: We established that the majority of the casual users
+select a larger variety of areas to start their bike trips. The company can offer
+bonuses for each user that visits over a specified number of bike stations. This idea
+could be also be supported with a social media page, where users could upload
+content of their bike exploration of Chicago.
+
+3. Focus on specific days: If a casual member can not be persuaded to buy the
+standard annual membership, the company could offer them slightly cheaper annual
+memberships, that grants unlimited rides only for specific days. The company can
+focus on days such as Saturday and Sunday, when the percentage of the rides made
+by casual users is higher.
+
+
+
 
 
 
