@@ -43,7 +43,11 @@ In the initial data preparation phase, we performed the following tasks:
 6. Deleting rows that contained wrong information in the ride_length column.
    
 ### Exploratory Data Analysis
-Afterthe data cleaning and preparation phase we produced the "tripdata_CLEANED.CSV" file, on whitch we based our analysis. Our analytical process was based on some key questions such as the following.
+After the data cleaning and preparation phase we produced the "tripdata_CLEANED.CSV" file, on whitch we based our analysis. Our analytical process was based on some key questions such as the following.
+1. How many bike trips did each of the two user groups made for 12 past months?
+2. What is the average trip duration for each of the two groups?
+3. How the trip percentage composition change throuought an average week?
+4. In which areas of Chicago City do the two user groups' members tend to start their bike trips?
 
 
 
