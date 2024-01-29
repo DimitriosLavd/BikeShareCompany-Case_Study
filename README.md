@@ -20,7 +20,6 @@ An -one week- data analysis case study for a bike share company. Includes Python
 
 - [Refrences](#refrences)
 
-
 ### Project Overview and Case Study Scenario
 You are a junior data analyst working on the marketing analyst team at Cyclistic, a
 bike-share company in Chicago. The director of marketing believes the company’s
@@ -42,6 +41,9 @@ question. We need to analyze the data, in order to identify trends that show how
 annual members and casual users use the company’s services differently.Analyzing
 these differences correctly will be the key for answering the other two questions
 and achieving the company’s objective.
+
+![Average Trip Duration VS Total Trips for Members and casual Users](https://github.com/DimitriosLavd/BikeShareCompany-Case_Study/assets/157892523/ecd0be6c-8420-409e-a8ec-1e2a0787703d)
+
 
 ### Data Source 
 Trip Data: Our primary data scource is the "202004-divvy-tripdata.CSV", that contains detailed information about the trips made using the company's bikes, for 12 months.
@@ -252,20 +254,25 @@ JOIN
 ON
   start_count_top10.start_station_name = start_lat_lng.start_station_name
 ```
-
 ### Results and Findings
 
 1. The annual members have made over 2.5 times more trips than the
 casual users. These numbers may indicate that annual members use the company’s
 bikes,primarily for their everyday transports.
 
+![Total Trips_Casual Users VS Annual Members](https://github.com/DimitriosLavd/BikeShareCompany-Case_Study/assets/157892523/2fd94ba9-df0a-4bc5-9bf3-b6e51195a91c)
+
 2. The average trip of the casual user lasts 5 times longer than the one of
 the annual member. This is a strong indication that casual members use the bike
 share service for long rides, for leisure and entertainment purposes.
 
+![Average Trip Duration in minutes](https://github.com/DimitriosLavd/BikeShareCompany-Case_Study/assets/157892523/5c3eaafc-6bc1-4c06-a6d4-3851412760db)
+
 3. On weekends and especially on Sunday, the casual users’ trips represent
 a much larger percentage of the total trips in contrast with what happens midweek. The above information can be summarized in the following graph, that enable us to
 extract some useful trends that govern the habits of the two user groups.
+
+![Member Trips percentage VS Casual Trips percentage, per day](https://github.com/DimitriosLavd/BikeShareCompany-Case_Study/assets/157892523/0f95ba31-061d-4e0b-807b-c87d77f2a327)
 
 Summarized insight (summury of the 3 previous insights): The annual members make many trips that
 last a relatively small amount of time. These data indicate that annual members
@@ -284,6 +291,8 @@ interest for the casual users are not that much concentrated. On the contrary, t
 are spread over a wider area in the City of Chicago. This observation may show a
 tendency for city exploration. Yet another fact that supports the theory that the
 casual users use the bikes for entertainment purposes.
+
+![Most popular start stations,comparison between casual users and members](https://github.com/DimitriosLavd/BikeShareCompany-Case_Study/assets/157892523/d5d5b21a-5818-448e-a622-f941a1e023d0)
 
 ### Recomendations
 The main business goal is to convert casual users to annual members. A potential
