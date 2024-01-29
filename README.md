@@ -3,14 +3,23 @@ An -one week- data analysis case study for a bike share company. Includes Python
 
 ## Table of Contents
 -[Project Overview and Case Study Scenario](#project-overview-and-case-study-scenario)
+
 -[Data Source](#data-source)
+
 -[Tools](#tools)
+
 -[Data Cleaning and Preparation](#data-cleaning-and-preparation)
+
 -[Exploratory Data Analysis](#exploratory-data-analysis)
+
 -[Data Analysis](#data-analysis)
+
 -[Results and Findings](#results-and-findings)
+
 -[Recomendations](#recomendations)
+
 -[Refrences](#refrences)
+
 
 ### Project Overview and Case Study Scenario
 You are a junior data analyst working on the marketing analyst team at Cyclistic, a
