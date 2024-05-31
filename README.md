@@ -1,5 +1,5 @@
 # BikeShareCompany-Case_Study
-An -one week- data analysis case study for a bike share company. Includes **Python and **SQL codes. 
+An -one week- data analysis case study for a bike share company. Includes **Python** and **SQL** codes. 
 
 ## Table of Contents
 - [Project Overview and Case Study Scenario](#project-overview-and-case-study-scenario)
